@@ -17,6 +17,10 @@ class User
   end
 
   def self.find_by(attribute, value)
+    return [] unless value
+    #return [] if !value
+    #return [] if value.nil?
+    #return [] if value == nil
     @@users.find_all { |user| user.send(attribute) == value }
   end
 
