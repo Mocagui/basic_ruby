@@ -1,4 +1,3 @@
-
 class User
   attr_accessor :last_name, :birth_date, :address
   attr_reader :age, :id
@@ -18,7 +17,7 @@ class User
   end
 
   def self.find_by(attribute, value)
-    @@users.find_all { |user| user. == value }
+    @@users.find_all { |user| user.send(attribute) == value }
   end
 
   def first_name=(value)
@@ -37,3 +36,4 @@ class User
   def destroy
     @@users.delete(self)
   end
+end
